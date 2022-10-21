@@ -1,6 +1,6 @@
-<h1><%= @product.name %></h1>
-<h3><%= @product.cost %></h3>
-<h3><%= @product.country_of_origin %></h3>
+<h1>Product Name: <%= @product.name %></h1>
+<h3>Cost: $<%= @product.cost %></h3>
+<h3>County of Origin: <%= @product.country_of_origin %></h3>
 
 <%= button_to "Edit product", 
               edit_product_path(@product),
