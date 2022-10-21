@@ -1,4 +1,4 @@
-class AlbumsController < ApplicationController
+class ReviewsController < ApplicationController
 
   def index
     # Code for listing all albums goes here.
