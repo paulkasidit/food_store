@@ -1,0 +1,16 @@
+<h1>products</h1>
+
+<% if @product.any? %>
+  <ul>
+    <% @product.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no product yet.</p>
+<% end %>
+
+
+<%= button_to "Create new product", 
+              new_product_path,
+              method: :get %>

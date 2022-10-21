@@ -1,0 +1,15 @@
+<h1><%= @product.name %></h1>
+<h3><%= @product.cost %></h3>
+<h3><%= @product.country_of_origin %></h3>
+
+<%= button_to "Edit product", 
+              edit_product_path(@product),
+              method: :get %>
+
+<%= button_to "Delete product", 
+              product_path(@product),
+              method: :delete %> 
+
+<%= button_to "Return to products Page", 
+              products_path,
+              method: :get %>
