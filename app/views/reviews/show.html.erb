@@ -1,0 +1,17 @@
+<h2>Reviews for: <%= @product.name %></h2>
+
+<h3>Author: <%= @review.author %></h3>
+<h3>Review: <%= @review.content_body %></h3>
+<h3>Rating: <%= @review.rating %></h3>
+
+<%= button_to "Edit Review", 
+              edit_product_review_path(@product, @review), 
+              method: :get %>
+
+<%= button_to "Delete Review", 
+              product_review_path(@product, @review),
+              method: :delete %>
+
+<%= button_to "Return to Product", 
+              product_path(@product), 
+              method: :get %>

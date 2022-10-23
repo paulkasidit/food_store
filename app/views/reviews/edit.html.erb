@@ -1,0 +1,11 @@
+<h1>Edit Review:</h1>
+
+<%= form_for [@product, @review] do |f| %>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+  <%= f.label :content_body %>
+  <%= f.text_area :content_body %>
+  <%= f.label :rating %>
+  <%= f.text_area :rating %>
+  <p><%= f.submit %></p>
+<% end %>
