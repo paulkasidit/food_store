@@ -2,6 +2,27 @@
 <h3>Cost: $<%= @product.cost %></h3>
 <h3>County of Origin: <%= @product.country_of_origin %></h3>
 
+<% if @product.reviews.any? %>
+  <h4>Here are the reviews for this product:</h4>
+
+  <% @product.reviews.each do |review| %>
+    <ul>
+      <li>
+        <%= link_to review.author, product_review_path(@product, review) %> -
+        By: <%= review.author %> |
+        <%= review.content_body%> |  
+        Rating: <%= review.rating %> 
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>There are no reviews listed for this product.</p>
+<% end %>
+
+<%= button_to "Write a New Review", 
+              new_product_review_path(@product),
+              method: :get %>
+
 <%= button_to "Edit product", 
               edit_product_path(@product),
               method: :get %>
