@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to product_path(@product)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -39,7 +39,7 @@ class ReviewsController < ApplicationController
       redirect_to product_path(@review.product)
     else
       @review = Product.find(params[:album_id])
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 

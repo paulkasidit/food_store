@@ -9,3 +9,12 @@
   <%= f.text_area :rating %>
   <p><%= f.submit %></p>
 <% end %>
+
+<% if @review.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @review.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
