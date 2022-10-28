@@ -7,6 +7,19 @@ class Product < ApplicationRecord
   validates :cost, presence: true
   validates :country_of_origin, presence: true
 
+  scope :most_reviews, -> {(
+    select("products.id, products.name, products.cost, products.country_of_origin, count(reviews.id) as reviews_count")
+    .joins(:reviews)
+    .group("products.id")
+    .order("reviews_count DESC")
+    .limit(10)
+    )}
+  
+  scope :three_most_recent_products, -> {(
+    select("products.id, products.name, products.cost, products.country_of_origin, products.created_at")
+    .order("products.created_at DESC")
+    .limit(3)
+  )}
   private
 
     def titleize_name

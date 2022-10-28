@@ -1,5 +1,27 @@
 <h1>Mario's Food Supply</h1>
 
+<h3> Our Three Most Recent Products</h3>
+<% if @three_most_recent_products.any? %>
+  <ul>
+    <% @three_most_recent_products.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no products yet.</p>
+<% end %>
+
+<h3> Our Most Reviewed Products</h3>
+<% if @product_with_most_reviews.any? %>
+  <ul>
+    <% @product_with_most_reviews.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no products yet.</p>
+<% end %>
+
 <h3>List of Products</h3>
 <% if @product.any? %>
   <ul>
