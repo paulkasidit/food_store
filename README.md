@@ -15,8 +15,6 @@ This website was built as a demonstration to a food supplier for managing their 
 
 ## Setup/Installation Requirements
 
-- Cloning the repo and running scripts on your local machine
-
 1. Clone the repo to your desired local directory with the below terminal command (you must already have git installed). Open a terminal in your preferred directory and run this command. 
 ```
 $git clone https://github.com/paulkasidit/food_store
@@ -33,7 +31,7 @@ $rake db:seed
 ```
 5. Run this command to start the server, it will usually be hosted on http://localhost:3000/
 ``` 
-$ruby app.rb
+$rails s 
 ```
 6. Run tests for all scripts in the project's root directory with following terminal command
 ``` 
