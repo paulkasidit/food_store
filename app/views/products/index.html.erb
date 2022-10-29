@@ -22,6 +22,19 @@
   <p>There are no products yet.</p>
 <% end %>
 
+
+
+<h3> Shop Local. Buy American.</h3>
+<% if @products_made_in_the_USA.any? %>
+  <ul>
+    <% @products_made_in_the_USA.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no American products yet.</p>
+<% end %>
+
 <h3>List of Products</h3>
 <% if @product.any? %>
   <ul>

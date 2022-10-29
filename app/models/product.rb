@@ -20,6 +20,9 @@ class Product < ApplicationRecord
     .order("products.created_at DESC")
     .limit(3)
   )}
+
+  scope :products_made_in_the_USA, -> {where("country_of_origin = 'Usa'")}
+
   private
 
     def titleize_name

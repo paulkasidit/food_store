@@ -11,6 +11,7 @@ product_reviews = ['Good stuff, I love the fragrant smell. It is out of this wor
   'Ok quality, I hate the fragrant smell. It is not out of this world. Look elsewhere',
   'Satisfactory product, I can stand the rancid smell. It is better to look at other products. Look elsewhere',
   'This excellent product is extremely satisfying to the palate. Good for my discerning tastes.']
+product_country_of_origin = ['USA','Ethiopia','Venezuela','Indonesia','Ghana','Kenya','Columbia','Brazil']
 product_ratings = [1,2,3,4,5]
 product_prices = [19.99, 15.99, 17.95, 83.88, 7.95, 5.50, 10.25, 17.89]
 
@@ -19,7 +20,7 @@ Product.destroy_all
 50.times do |index|
   Product.create!(name: Faker::Coffee.blend_name,
                   cost: (product_prices).sample,
-                  country_of_origin: Faker::Coffee.origin )
+                  country_of_origin: (product_country_of_origin).sample)
   end
 
 p "Created #{Product.count} products"

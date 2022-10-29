@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
     @product = Product.all
     @product_with_most_reviews = Product.most_reviews
     @three_most_recent_products = Product.three_most_recent_products 
+    @products_made_in_the_USA = Product.products_made_in_the_USA
     render :index 
   end
 
