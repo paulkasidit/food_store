@@ -9,5 +9,5 @@ describe Review do
   it { should validate_length_of(:content_body).is_at_most(250) }
   it { should validate_presence_of :rating }
   it { should validate_numericality_of(:rating).only_integer }
-  it { should validate_inclusion_of(:rating).in_array([1,2,3,4,5]) }
+  it { should validate_numericality_of(:rating).is_greater_than_or_equal_to(1).is_less_than_or_equal_to(5)}
 end
